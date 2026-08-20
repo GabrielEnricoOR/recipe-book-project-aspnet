@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using MyRecipeBook.Communication;
 
 namespace MyRecipeBook.Api.Controllers;
 
@@ -6,7 +7,7 @@ namespace MyRecipeBook.Api.Controllers;
 [ApiController]
 public class UserController : ControllerBase
 {
-    public IActionResult Register()
+    public IActionResult Register([FromBody] RequestRegisterUserAccountJson request)
     {
         return Created();
     }
