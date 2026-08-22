@@ -12,4 +12,10 @@
       <ProjectReference Include="..\MyRecipeBook.Domain\MyRecipeBook.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="UseCases/" />
+      <Folder Include="UseCases/User/" />
+      <Folder Include="UseCases/User/Register/" />
+    </ItemGroup>
+
 </Project>
