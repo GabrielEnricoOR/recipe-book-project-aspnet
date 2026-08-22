@@ -8,6 +8,8 @@ namespace MyRecipeBook.Api.Controllers;
 [ApiController]
 public class UserController : ControllerBase
 {
+
+    [HttpPost("")]
     public IActionResult Register([FromBody] RequestRegisterUserAccountJson request)
     {
         var useCase = new RegisterUserAccountUseCase();
