@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyRecipeBook.Application.UseCases.User.Register;
 using MyRecipeBook.Communication;
+using MyRecipeBook.Exception;
 
 namespace MyRecipeBook.Api.Controllers;
 
