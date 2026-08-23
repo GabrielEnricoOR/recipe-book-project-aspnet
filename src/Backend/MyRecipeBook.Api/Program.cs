@@ -1,6 +1,9 @@
+using System.Globalization;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,9 +13,24 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[] {"en-US", "pt-BR", "es"};
+    options.SupportedCultures = supportedCultures.Select(c => new CultureInfo(c)).ToList();
+    options.SupportedUICultures = supportedCultures.Select(c => new CultureInfo(c)).ToList();
+    options.DefaultRequestCulture = new RequestCulture("en-US"); 
+    options.RequestCultureProviders = new List<IRequestCultureProvider>
+   {
+       new AcceptLanguageHeaderRequestCultureProvider()
+   };
+});
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+var localizationOptions = app.Services.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value;
+app.UseRequestLocalization(localizationOptions);
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();

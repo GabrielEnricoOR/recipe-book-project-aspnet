@@ -12,17 +12,16 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
-	<data name="VALIDATION_NAME_REQUIRED" xml:space="preserve">
-		<value>User name is required.</value>
+	<data name="VALIDATION_USER_NAME" xml:space="preserve">
+		<value>Nome de usuário é obrigatório</value>
 	</data>
 	<data name="VALIDATION_EMAIL_REQUIRED" xml:space="preserve">
-		<value>User email is required</value>
+		<value>Email de usuário é obrigatório</value>
 	</data>
 	<data name="VALIDATION_EMAIL_INVALID" xml:space="preserve">
-		<value>Incorrect email format
-</value>
+		<value>Formato de email incorreto</value>
 	</data>
 	<data name="VALIDATION_PASSWORD_REQUIRED" xml:space="preserve">
-		<value>User password is required</value>
+		<value>Senha de usuário é obrigatório</value>
 	</data>
 </root>
