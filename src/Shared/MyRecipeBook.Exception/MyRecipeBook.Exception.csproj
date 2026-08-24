@@ -20,4 +20,8 @@
         <LastGenOutput>ResourceMessagesException.Designer.cs</LastGenOutput>
       </EmbeddedResource>
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ExceptionBase/" />
+    </ItemGroup>
 </Project>
