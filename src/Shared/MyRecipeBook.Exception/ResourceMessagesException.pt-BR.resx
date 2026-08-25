@@ -24,4 +24,7 @@
 	<data name="VALIDATION_PASSWORD_REQUIRED" xml:space="preserve">
 		<value>Senha de usuário é obrigatório</value>
 	</data>
+	<data name="UNKNOWN_ERROR" xml:space="preserve">
+		<value>Erro desconhecido</value>
+	</data>
 </root>
