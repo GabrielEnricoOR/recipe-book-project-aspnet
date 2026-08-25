@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using MyRecipeBook.Api.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddMvc(Options => Options.Filters.Add<ExceptionFilter>());
 
 
 builder.Services.Configure<RequestLocalizationOptions>(options =>
