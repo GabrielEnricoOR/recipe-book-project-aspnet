@@ -10,5 +10,10 @@ public class ErrorOnValidationException : MyRecipeBookException
     {
         _errorMessages = errorMessages;
     }
+
+    public List<string> GetErrorMessages()
+    {
+        return _errorMessages;
+    }
  
 }
