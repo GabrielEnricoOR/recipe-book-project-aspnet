@@ -1,4 +1,5 @@
 using System;
+using Mapster;
 using MyRecipeBook.Communication;
 using MyRecipeBook.Exception.ExceptionBase;
 
@@ -8,6 +9,15 @@ public class RegisterUserAccountUseCase
 {
     public void Execute(RequestRegisterUserAccountJson request)
     {
+        ValidateAndThrowOnError(request);
+
+        var user = request.Adapt<Domain.Entities.User>();
+
+        
+    }
+
+    private void ValidateAndThrowOnError(RequestRegisterUserAccountJson request)
+    {
         var validator = new RegisterUserAccountValidator();
 
         var result = validator.Validate(request);
@@ -15,7 +25,7 @@ public class RegisterUserAccountUseCase
         if (result.IsValid == false)
         {
             List<string> errorMessages = result.Errors.Select(error => error.ErrorMessage).ToList();
-            
+
             throw new ErrorOnValidationException(errorMessages);
         }
     }
