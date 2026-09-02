@@ -13,14 +13,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="UseCases/" />
-      <Folder Include="UseCases/User/" />
-      <Folder Include="UseCases/User/Register/" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="FluentValidation" Version="12.1.1" />
       <PackageReference Include="Mapster" Version="10.0.12" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.11" />
     </ItemGroup>
 
 </Project>
