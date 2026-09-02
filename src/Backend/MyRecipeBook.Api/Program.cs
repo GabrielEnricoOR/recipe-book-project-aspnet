@@ -5,14 +5,19 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using MyRecipeBook.Api.Filters;
+using MyRecipeBook.Application;
+using MyRecipeBook.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
+
+DependecyInjectionInfrastructure.AddInfrastructureServices(builder.Services);
+DependencyInjectionExtension.AddApplicationServices(builder.Services);
 
 
 builder.Services.AddMvc(Options => Options.Filters.Add<ExceptionFilter>());
