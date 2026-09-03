@@ -8,7 +8,7 @@ namespace MyRecipeBook.Application
 {
     public static class DependencyInjectionExtension
     {
-        public static void AddApplicationServices(IServiceCollection services)
+        public static void AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<IRegisterUserAccountUseCase, RegisterUserAccountUseCase>();
         }

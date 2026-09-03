@@ -1,12 +1,9 @@
-using System.Globalization;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using MyRecipeBook.Api.Filters;
 using MyRecipeBook.Application;
 using MyRecipeBook.Infrastructure;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +13,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 
-DependecyInjectionInfrastructure.AddInfrastructureServices(builder.Services);
-DependencyInjectionExtension.AddApplicationServices(builder.Services);
+builder.Services.AddInfrastructureServices();
+builder.Services.AddApplicationServices();
 
 
 builder.Services.AddMvc(Options => Options.Filters.Add<ExceptionFilter>());
