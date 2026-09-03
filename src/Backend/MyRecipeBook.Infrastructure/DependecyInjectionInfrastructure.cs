@@ -9,7 +9,7 @@ namespace MyRecipeBook.Infrastructure
 {
     public static class DependecyInjectionInfrastructure
     {
-        public static void AddInfrastructureServices(IServiceCollection services)
+        public static void AddInfrastructureServices(this IServiceCollection services)
         {
             services.AddScoped<IPasswordHashing, Argon2PasswordHasher>();
         }
