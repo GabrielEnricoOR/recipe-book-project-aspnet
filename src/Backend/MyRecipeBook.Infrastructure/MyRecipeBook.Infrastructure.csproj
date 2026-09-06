@@ -15,8 +15,4 @@
       <ProjectReference Include="..\MyRecipeBook.Domain\MyRecipeBook.Domain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="DataAccess\" />
-    </ItemGroup>
-
 </Project>
