@@ -3,7 +3,7 @@ using MyRecipeBook.Domain.Entities;
 
 namespace MyRecipeBook.Infrastructure.DataAccess;
 
-public class MyRecipeBookDbContext : DbContext
+internal class MyRecipeBookDbContext : DbContext
 {
     public MyRecipeBookDbContext(DbContextOptions<MyRecipeBookDbContext> options) : base(options)
     {
