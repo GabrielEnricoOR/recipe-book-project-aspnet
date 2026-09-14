@@ -1,6 +1,7 @@
 using System;
 using Mapster;
 using MyRecipeBook.Communication;
+using MyRecipeBook.Domain.Repositories;
 using MyRecipeBook.Domain.Repositories.User;
 using MyRecipeBook.Domain.Security.PasswordHashing;
 using MyRecipeBook.Exception.ExceptionBase;
@@ -11,11 +12,15 @@ public class RegisterUserAccountUseCase : IRegisterUserAccountUseCase
 {
     private readonly IPasswordHashing _passwordHashing;  
     private readonly IUserWriteOnlyRepository _userWriteOnlyRepository;
+    private readonly IUnitOfWork  _unitOfWork;
 
-    public RegisterUserAccountUseCase(IPasswordHashing password, IUserWriteOnlyRepository userWriteOnlyRepository)
+    public RegisterUserAccountUseCase(IPasswordHashing password, 
+        IUserWriteOnlyRepository userWriteOnlyRepository, 
+        IUnitOfWork unitOfWork)
     {
         _passwordHashing = password;
         _userWriteOnlyRepository = userWriteOnlyRepository;
+        _unitOfWork = unitOfWork;
     }
 
 
@@ -27,6 +32,7 @@ public class RegisterUserAccountUseCase : IRegisterUserAccountUseCase
 
         user.Password = _passwordHashing.HashPassword(request.Password);
         await _userWriteOnlyRepository.Add(user);
+        await _unitOfWork.Commit();
 
     }
 
