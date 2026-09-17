@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using MyRecipeBook.Communication.Responses;
 
 namespace MyRecipeBook.Application.UseCases.User.Register
 {
     public interface IRegisterUserAccountUseCase
     {
-        Task Execute(RequestRegisterUserAccountJson request);
+        Task<ResponseRegisteredUserJson> Execute(RequestRegisterUserAccountJson request);
     }
 }
