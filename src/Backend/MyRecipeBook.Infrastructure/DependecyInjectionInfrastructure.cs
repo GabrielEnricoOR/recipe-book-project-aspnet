@@ -3,7 +3,9 @@ using MyRecipeBook.Domain.Security.PasswordHashing;
 using MyRecipeBook.Infrastructure.Security.PasswordHashing;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
+using FluentMigrator.Runner;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MyRecipeBook.Domain.Repositories;
@@ -24,6 +26,14 @@ namespace MyRecipeBook.Infrastructure
             services.AddDbContext<MyRecipeBookDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+            });
+
+            services.AddFluentMigratorCore().ConfigureRunner(options =>
+            {
+                options.AddSqlServer()
+                .WithGlobalConnectionString(configuration.GetConnectionString("DefaultConnection"))
+                .ScanIn(Assembly.Load("MyRecipeBook.Infrastructure"))
+                .For.All();
             });
         }
 
