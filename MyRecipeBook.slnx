@@ -12,6 +12,7 @@
     <Project Path="src/Shared/MyRecipeBook.Exception/MyRecipeBook.Exception.csproj" />
   </Folder>
   <Folder Name="/tests/">
+    <Project Path="CommomTestUtilities/CommomTestUtilities.csproj" />
     <Project Path="Validation.Tests/Validation.Tests.csproj" />
   </Folder>
 </Solution>
