@@ -13,6 +13,7 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="CommonTestUtilities\CommonTestUtilities.csproj" />
+    <Project Path="UseCases.Tests/UseCases.Tests.csproj" />
     <Project Path="Validation.Tests/Validation.Tests.csproj" />
   </Folder>
 </Solution>
