@@ -5,7 +5,7 @@ namespace CommomTestUtilities;
 
 public class RequestRegisterUserAccountJsonBuilder
 {
-    public static RequestRegisterUserAccountJson Builder()
+    public static RequestRegisterUserAccountJson Build()
     {
         return new Faker<RequestRegisterUserAccountJson>()
             .RuleFor(request => request.Name, f => f.Person.FirstName)
