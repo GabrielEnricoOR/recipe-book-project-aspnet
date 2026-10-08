@@ -41,11 +41,12 @@ public class RegisterUserAccountUseCaseTests
         });
     } 
     
+    [Fact]
     public async Task Validate_ShouldHaveError_WhenEmailAlreadyExists()
     {
         var request = RequestRegisterUserAccountJsonBuilder.Build();
         
-        var useCase = CreateUseCase();
+        var useCase = CreateUseCase(request.Email);
         
         var exception = await useCase.Execute(request).ShouldThrowAsync<ErrorOnValidationException>();
         exception.GetErrorMessages().ShouldSatisfyAllConditions(error =>
