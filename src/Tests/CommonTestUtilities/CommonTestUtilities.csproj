@@ -19,8 +19,6 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Backend\MyRecipeBook.Domain\MyRecipeBook.Domain.csproj" />
       <ProjectReference Include="..\..\Shared\MyRecipeBook.Communication\MyRecipeBook.Communication.csproj" />
-      <ProjectReference Include="..\src\Backend\MyRecipeBook.Domain\MyRecipeBook.Domain.csproj" />
-      <ProjectReference Include="..\src\Shared\MyRecipeBook.Communication\MyRecipeBook.Communication.csproj" />
     </ItemGroup>
 
 </Project>
