@@ -3,6 +3,7 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using CommomTestUtilities;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Shouldly;
 
 namespace WebApi.Tests.User.Register;
