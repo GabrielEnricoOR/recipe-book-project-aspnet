@@ -4,7 +4,7 @@ namespace MyRecipeBook.Infrastructure.Migrations.Versions;
 
 
 [Migration(202609191211, "Creating users table")]
-internal class CreateUsersTable : ForwardOnlyMigration
+public class CreateUsersTable : ForwardOnlyMigration
 {
     public override void Up()
     {

@@ -11,7 +11,7 @@ namespace MyRecipeBook.Api.Controllers;
 public class UserController : ControllerBase
 {
 
-    [HttpPost("/register")]
+    [HttpPost("register")]
     [ProducesResponseType(typeof(ResponseRegisteredUserJson),StatusCodes.Status201Created)]
     [ProducesResponseType(typeof(ResponseErrorJson),StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Register(
