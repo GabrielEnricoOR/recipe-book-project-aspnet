@@ -11,10 +11,5 @@
     <Project Path="src/Shared/MyRecipeBook.Communication/MyRecipeBook.Communication.csproj" />
     <Project Path="src/Shared/MyRecipeBook.Exception/MyRecipeBook.Exception.csproj" />
   </Folder>
-  <Folder Name="/tests/">
-    <Project Path="CommonTestUtilities\CommonTestUtilities.csproj" />
-    <Project Path="UseCases.Tests/UseCases.Tests.csproj" />
-    <Project Path="Validation.Tests/Validation.Tests.csproj" />
-    <Project Path="WebApi.Tests/WebApi.Tests.csproj" />
-  </Folder>
+  <Folder Name="/src/Tests/" />
 </Solution>
