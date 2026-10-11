@@ -21,7 +21,7 @@ public class RegisterUserAccountUseCaseTests
         result.ShouldNotBeNull();
         result.Name.ShouldBe(request.Name);
         result.Tokens.ShouldNotBeNull();
-        result.Tokens.AcessToken.ShouldBeNullOrEmpty();
+        result.Tokens.AccessToken.ShouldBeNullOrEmpty();
         result.Tokens.RefreshToken.ShouldBeNullOrEmpty();
     }
 

@@ -23,7 +23,6 @@
       <ProjectReference Include="..\..\Backend\MyRecipeBook.Application\MyRecipeBook.Application.csproj" />
       <ProjectReference Include="..\..\Shared\MyRecipeBook.Exception\MyRecipeBook.Exception.csproj" />
       <ProjectReference Include="..\CommonTestUtilities\CommonTestUtilities.csproj" />
-      <ProjectReference Include="..\src\Backend\MyRecipeBook.Application\MyRecipeBook.Application.csproj" />
     </ItemGroup>
 
 </Project>
